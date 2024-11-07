@@ -12,9 +12,9 @@ const ConsultAnimalsApi = () => {
   const handlePrevPage = () => setPage((prevPage) => Math.max(prevPage - 1, 1));
 
 
-  if (loading) return <img src= {Loading} />;
-  if (error) return <p>Error: {error}</p>;
-  console.log("paginas maximas " + totalpages);
+  if (loading) return <div className="navegacion"><img src= {Loading} className="loading"/></div>;
+  if (error) return <p>Error Consulta de la Api: {error}</p>;
+
   const total = parseInt(totalpages); 
 
   return (
@@ -26,8 +26,8 @@ const ConsultAnimalsApi = () => {
             <span>Página {page}</span>
             <button onClick={handleNextPage} disabled={page === total }>
             Adelante
-            </button></div>
-        
+            </button>
+            </div>
   
       <main className="container">  
        

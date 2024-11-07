@@ -6,8 +6,10 @@ import Swal from 'sweetalert2';
 import imagen_top from "../../assets/images/page-img-4.jpg"
 
 export const AnimalsRegister = () => {
-  
-  
+
+  // Variable para almacenar el token para las peticiones a realizar en este componente
+  const token = localStorage.getItem("token");
+
   //Estado inicial del formulario
   const initialFormState = {
     name: ' ',
@@ -48,7 +50,8 @@ export const AnimalsRegister = () => {
       method: 'POST',
       body: JSON.stringify(newAnimal),
       headers: {
-        'Content-Type': 'application/json'
+       "Content-Type": "application/json",
+       "Authorization": token
       }
     });
 

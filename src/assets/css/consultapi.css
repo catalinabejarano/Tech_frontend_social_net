@@ -45,6 +45,11 @@ h5 {
     align-items: center;
  }
 
+ .loading {
+
+    justify-content: center;
+ }
+
   /* CSS DE ConsultAnimalsApi ***********/
   /*
 .container {

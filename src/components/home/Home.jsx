@@ -1,22 +1,11 @@
-//import PropTypes from 'prop-types'; 
 import  { useState } from 'react';
-
 import BounceBox from './BounceBox';
-
-//import imagen1 from "../assets/images/page-img-in.jpg"
 import imagen1 from "../../assets/images/logo_fund.png"
-//import imagen2 from "../assets/images/page-img-4.jpg"
 import imagen2 from "../../assets/images/page-img-in.jpg"
 import gaticosImage from '../../assets/images/page-img.jpg';
 import perritosImage from '../../assets/images/page-img-1.jpg';
 import ubicacionFun from '../../assets/images/ubicacion.jpg';
 import ayuda from '../../assets/images/ayuda.jpg';
-
-//import '../../assets/css_home/style.css';
-//import '../../assets/css_home/grid.css';
-
-
-
 
 const Home = () => {
 
@@ -136,12 +125,12 @@ const Home = () => {
                     <div>
                         <div className="areas"> 
                             <div className="">
-                            <a href="/gaticos"  onMouseEnter={onGatitosHover} onMouseLeave={onGatitosLeave}>
+                            <a href="/rsocial/rescatados"  onMouseEnter={onGatitosHover} onMouseLeave={onGatitosLeave}>
                             <img src={gaticosImage} className="imagesSection" alt="Gaticos rescatados" /></a>
                         </div>
 
                         <div className="">
-                            <a href="/perritos" onMouseEnter={onPerritosHover} onMouseLeave={onPerritosLeave}>
+                            <a href="/rsocial/rescatados" onMouseEnter={onPerritosHover} onMouseLeave={onPerritosLeave}>
                             <img src={perritosImage} className="imagesSection" alt="Perritos rescatados" /> </a>
                         </div>
                     </div> 
@@ -162,6 +151,37 @@ const Home = () => {
                 </div>
             </section> 
             </section> 
+            <footer>
+                <div className="main-footer">
+                    <div className="container_16">
+                        <div className="wrapper bg-wrap-aside">
+                             <div className="grid_5 suffix_1">
+                                <h3>Encuentranos en nuestras redes sociales</h3>
+                                <a target="_blank" href="http://api.whatsapp.com/send?phone=573182211091" id="icon" className="icons"></a>
+                                <a target="_blank" href="https://www.facebook.com/" id="icon-1" className="icons"></a>
+                                <a target="_blank" href="https://www.instagram.com/" id="icon-2" className="icons"></a>
+                                <a target="_blank" href="https://www.tiktok.com/" id="icon-5" className="icons"></a>
+                            </div>
+                   
+                             <div className="grid_5">
+                                <ul>
+                                 <li><a href="./Javascript/ayuda.html">¿Deseas ayudar?</a></li>
+                                 <li><a href="./Javascript/contacto.html">Contacto</a></li>
+                                </ul>
+                             </div>
+
+                            <div className="grid_4">
+                                <h3>Donde estamos ubicados</h3>
+                                <b>FUNDACION ALBERGUE SICARU -CUNDINAMARCA</b>
+                            </div>
+           
+	    	                <div className="grid_16">
+                            <p> Fundación Albergue Sicaru © {new Date().getFullYear()}</p>              
+                            </div>
+	    	            <div> 
+                    </div>
+                </div></div></div>
+            </footer>
         </main>
     );
 };

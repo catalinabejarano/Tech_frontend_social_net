@@ -38,10 +38,7 @@ const HomePublic = () => {
                 <div className="container_16">
                    
                         <div className="box1">
-                            
                             <img src={imagen1} alt="" className="logofund " />
-                            
-                           
                         </div>
                        
                         <div className="box2">
@@ -54,7 +51,6 @@ const HomePublic = () => {
                                 <p className="texto"> Somos una fundación para cientos de peluditos sin protección ni hogar, apóyanos. </p>
                                 
                         </div>
-                            
                         
                         <div className="box3">
                             <br/> <br/>                         
@@ -62,8 +58,6 @@ const HomePublic = () => {
                             <br/>
                             <h4 className="aviso">NO COMPRES, ADOPTA!</h4> 
                         </div>
-                         
-                   
                 </div>
             </section>
             <section>  
@@ -119,7 +113,7 @@ const HomePublic = () => {
                                 
                             </p> 
 
-                            {/*<a href="#" className="button">Leer más<span></span></a> */}
+                           
                             </BounceBox>
                              )} 
                                          

@@ -1,9 +1,12 @@
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,700,300);/*font-family: 'Oswald', sans-serif;*/
+@import url(http://fonts.googleapis.com/css?family=Kaushan+Script);/*font-family: 'Kaushan Script', cursive;*/
+
 /*ESTILOS GENERALES*/
 :root {
   --color-general-text: #333;
-  --color-backgroud-navbar: #3785e5;
+  --color-backgroud-navbar: #f67130;
   --color-text-navbar: white;
-  --color-hover-navbar: #1756cc;
+  --color-hover-navbar: #ef324e;
 
   --color-border-headers: #eee;
 
@@ -82,6 +85,8 @@ body {
   align-items: center;
   margin-bottom: 2rem;
   height: 5.3rem;
+  background-image: linear-gradient(180deg, #d5c346 0, #dcba3c 8.33%, #e2b033 16.67%, #e8a52b 25%, #ed9824 33.33%, #f08b20 41.67%, #f37b1f 50%, #f56a21 58.33%, #f75827 66.67%, #f9442f 75%, #fa2b38 83.33%, #fa0042 91.67%, #f9004e 100%);
+
 }
 
 .layout__navbar *{
@@ -581,6 +586,8 @@ button{
   border-radius: 10px; /* Opcional: redondea las esquinas */
   background-color: #fff; /* Opcional: establece un color de fondo */
   margin: 0 auto; /* Centrar horizontalmente */
+  box-shadow: 0 0 20px hsla(157, 97%, 48%, 0.708);
+
 }
 
 .no-following-message, .no-followers-message {
@@ -596,4 +603,281 @@ button{
   color: var(--color-name-user);
   font-size: 2rem;
   font-weight: bold;
+}
+
+/*/////////////ESTILOS DEL HOME ///////////////////////*/
+
+.logofund {
+  width: 220px; 
+  height:200px;
+ 
+
+}
+
+
+.logofundsmall {
+
+  width: 55px; 
+  height:55px;
+  
+}
+
+
+.imagesSection {
+
+  width: 249px; 
+  height: 161px;
+  box-shadow: 0 0 20px #000;
+  border-radius: 15px 50px
+  
+}
+
+#image_adopta {
+
+  box-shadow: 0 0 20px #000;
+  border-radius: 15px ;
+} 
+
+.bienvenida {
+text-align: center;
+color: #000;
+text-shadow: 1px 1px 2px black;
+font-size:x-large
+}
+.aviso {
+text-shadow: 1px 1px 2px black;
+color: hsl(39, 94%, 50%);
+}
+
+.panel {
+
+width: 300px;
+justify-content: center;
+background-color: #4cae4c;
+color:#ffffff;
+border-radius: 1px 30px 30px 1px;
+
+}
+.panel2 {
+width: 300px;
+justify-content: center;
+background-color: hsl(279, 93%, 48%);
+color:#ffffff;
+border-radius: 1px 30px 30px 1px;
+
+}
+
+.panel3 {
+
+width: 300px;
+justify-content: center;
+background-color: hwb(212 5% 13%);
+color:#ffffff;
+border-radius: 1px 30px 30px 1px;
+}
+
+.panel4 {
+
+width: 300px;
+justify-content: center;
+background-color: hwb(30 5% 9%);
+color:#ffffff;
+border-radius: 1px 30px 30px 1px;
+}
+
+
+.areas{
+display: flex;
+}
+
+.areasfundacion {
+
+/*border: #337ab7 solid;*/
+padding: 5px 10px;
+
+
+}
+
+.button{
+display: inline-block;
+font-family: Arial, Helvetica, sans-serif ; 
+font-size: 13px; 
+line-height: 16px;
+padding:7px 15px ;
+background:#ff2929; 
+color:#fff ; 
+font-weight:bold;
+position:relative;
+border-radius: 15px 50px;
+
+}
+
+.seccion_interes {
+text-shadow: 1px 1px 2px black;
+}
+
+
+
+.texto {
+font-family: 'Oswald', sans-serif;
+font-size: medium;
+
+}
+
+.bounce-box {
+
+margin-left: 10px;
+margin-top: 0px;
+margin-right: 0px;
+color: hsl(210, 11%, 96%);
+text-align: justify;
+padding: 0px 40px 10px 10px ;
+align-content: center;
+width: 310px;
+height: 290px;
+text-shadow: 1px 1px 2px black;
+border-radius: 15px 50px 30px 5px;
+
+}
+
+.logo_form {
+width: 270px;
+height: 270px;
+
+}
+
+#fondo_areas {
+background-image: url("../images/fundacion.jpg");
+box-shadow: 0 0 20px #000;
+}
+
+.sectionone_form {
+display: flex;
+flex-direction: row;  
+align-items: center;
+justify-content: center;
+width: 500px;
+
+
+}
+
+.sectiontwo_form {
+display: flex;
+flex-direction: row;  
+justify-content:space-evenly;
+padding: 1px 1px;
+margin: 5px 5px ;
+width: 500px;
+
+}
+
+.form_animales{
+max-width: 500px;
+}
+
+.inputs_form {
+display: flex;
+flex-direction: column;  
+justify-content: center;
+align-items: center;
+margin:10px 10px;
+padding: 10px;
+
+}
+
+.imagen_top {
+width: 70px;
+height: 70px;
+box-shadow: 0 0 20px #000;
+border-radius: 20px 20px 20px 20px ;
+
+}
+
+.submitbtn {
+display: flex;
+align-content: center;
+justify-content: center;
+border:#398439 solid ;
+background-color: #5cb85c  ;
+border-radius: 10px;
+}
+
+.rescatados {
+text-align: center;
+border: #0c8e0c solid;
+width: 100%;
+}
+
+
+/************************HOME.CSS************************************/
+.main_home{
+	width:100%;
+	height: auto; 
+	min-height:100%;
+	background: url(../images/bg-main.jpg) 0 0 repeat;
+  /*border: #d90f0f solid*/
+
+	}
+
+  /*********************************content*************************************/
+#content{
+ 
+  /*border: hsl(258, 89%, 40%) solid ;*/
+	width: auto; 
+  height: auto; 
+}
+
+.container_16 {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    height: auto;
+    /*border: hsl(136, 84%, 48%) solid*/
+
+}
+
+.container_16 .box1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /*margin-left: auto;
+  margin-right: auto;*/
+  width: 50%;
+  height:fit-content;
+  
+  /*border: hsl(136, 84%, 48%) solid;*/
+  padding: 20px 20px;
+
+}
+
+
+.container_16 .box2{
+
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  height:fit-content;
+  
+  /*border: hsl(240, 84%, 48%) solid;*/
+  padding: 20px 20px;
+  color:#66afe9
+
+}
+
+.container_16 .box3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: justify;
+  width: 50%;
+  height: auto;
+  /*border: hwb(35 4% 15%) solid;*/
+  padding: 20px  20px;
+  margin: 20 20 20 20;
 }

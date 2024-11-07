@@ -3,6 +3,7 @@ import { Global } from "../../helpers/Global";
 import { useForm } from "../../hooks/useForm";
 import useAuth from "../../hooks/useAuth";
 import { useNavigate } from "react-router-dom";
+import logo from '../../assets/images/logo_fund.png';
 
 export const Login = () => {
 
@@ -66,11 +67,15 @@ export const Login = () => {
   return (
     <>
       <header className="content__header content__header--public">
-        <h1 className="content__title">Login</h1>
+        <div>
+          <img src={logo} className="logo_form" alt="Logo Fundación Sicaru" />
+        </div>
+        
       </header>
-
+    
       {/* Formulario de Login*/}
       <div className="content__posts">
+      
         <div className="form-style">
           {/* Mensajes para el usuario */}
           {logged == "logged" ? (
@@ -87,7 +92,8 @@ export const Login = () => {
           ) : (
             ""
           )}
-
+          <h1 className="content__title">Login</h1>
+          <br/>
           <form className="form-login" onSubmit={loginUser}>
             <div className="form-group">
               <label htmlFor="email">Correo Electrónico</label>

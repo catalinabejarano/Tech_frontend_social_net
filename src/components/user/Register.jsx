@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useForm } from "../../hooks/useForm";
+import { useForm}  from "../../hooks/useForm";
 import { useNavigate } from "react-router-dom";
 import { Global } from '../../helpers/Global';
 import Swal from 'sweetalert2';
@@ -138,6 +138,7 @@ export const Register = () => {
                 name="bio"
                 onChange={changed}
                 value={form.bio || ''}
+                autoComplete="biografía"
               />
             </div>
             <div className="form-group">
@@ -152,12 +153,13 @@ export const Register = () => {
                 autoComplete="new-password"
               />
             </div>
-
+            <div className="submitbtn">
             <input
               type="submit"
               value="Regístrate"
               className="btn btn-success"
             />
+            </div>
           </form>
         </div>
       </div>

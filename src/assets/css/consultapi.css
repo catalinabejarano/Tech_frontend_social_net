@@ -1,0 +1,58 @@
+/********* CSS DE ListCard **************/
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 21rem), 1fr));
+    gap: 20px;
+}
+
+h5 {
+    color:darkorange   ;
+}
+
+.card-imagen-top:hover {
+    transform: scale(1.3);
+}
+
+.card-imagen-top {
+    transform: scale(1);
+    transition: all 0.2s ease-in-out;
+    object-fit: cover;
+
+}
+
+.overflow2 {
+    overflow: hidden;
+   
+ }
+
+ #adjustimage {
+
+    object-fit: cover;
+    width: 200px;
+    height: 200px;
+ }
+
+  /* CSS DE ConsultAnimalsApi ***********/
+  /*
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 21rem), 1fr));
+    gap: 20px;
+}
+/*
+h5 {
+    color:darkorange   ;
+}
+
+/*
+.card-imagen-top:hover {
+    transform: scale(1.3);
+}
+
+.card-imgagen-top {
+    transform: scale(1);
+    transition: all 0.2s ease-in-out;
+   }
+
+*/

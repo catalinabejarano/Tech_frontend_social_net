@@ -4,6 +4,8 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 21rem), 1fr));
     gap: 20px;
+    justify-items:  center;
+
 }
 
 h5 {
@@ -23,6 +25,8 @@ h5 {
 
 .overflow2 {
     overflow: hidden;
+    box-shadow: 0 0 20px hwb(0 5% 95%);
+    
    
  }
 
@@ -31,6 +35,14 @@ h5 {
     object-fit: cover;
     width: 200px;
     height: 200px;
+    
+ }
+
+ 
+ .navegacion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
  }
 
   /* CSS DE ConsultAnimalsApi ***********/

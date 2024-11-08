@@ -1,5 +1,6 @@
-import { AnimalsRegister } from "./AnimalsRegister"
+//import { AnimalsRegister } from "./AnimalsRegister"
 //import  ConsultAnimalsApi  from "./ConsultAnimalsApi"
+import { AnimalsRegisterUpload } from "./AnimalsRegisterUpload"
 
 export const RescuedAnimals = () => {
   return (
@@ -9,7 +10,9 @@ export const RescuedAnimals = () => {
     </header>
 
     {/*<ConsultAnimalsApi/>*/}
-    <AnimalsRegister/>
+    {/*<AnimalsRegister/>*/}
+    <AnimalsRegisterUpload/>
+
     </>
   )
 }

@@ -1,7 +1,7 @@
 import { useState } from "react";
-import  useFormAnimal  from "../../hooks/useFormAnimal";
+import  useFormAnimal  from "../hooks/useFormAnimal";
 import { useNavigate } from "react-router-dom";
-import { Global } from '../../helpers/Global';
+import { Global } from '../helpers/Global';
 import Swal from 'sweetalert2';
 import imagen_top from "../../assets/images/page-img-4.jpg"
 
@@ -86,6 +86,7 @@ export const AnimalsRegister = () => {
     };
   };
 
+  
 
   return (
     <>

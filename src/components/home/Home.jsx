@@ -33,14 +33,11 @@ const Home = () => {
                 <div className="container_16">
                    
                         <div className="box1">
-                            
                             <img src={imagen1} alt="" className="logofund " />
-                            
-                           
                         </div>
                        
                         <div className="box2">
-                                <h1 className="bienvenida"> Fundación Albergue Sicaru</h1>
+                                <h1 className="content__title"> Fundación Sicaru</h1>
                                 <br/>
                                 <p className="texto">
                                  Este es nuestro espacio virtual dedicado a nuestros queridos peluditos, quienes son nuestro mayor apoyo emocional. 

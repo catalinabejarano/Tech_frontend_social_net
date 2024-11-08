@@ -9,7 +9,7 @@ export const NavPriv = () => {
   const { auth } = useAuth();
 
   return (
-    <nav className="navbar__container-lists">
+    <nav className="navbar__container-lists"  >
 
       <ul className="container-lists__menu-list">
         <img src={imagen1} alt="" className="logofundsmall" />

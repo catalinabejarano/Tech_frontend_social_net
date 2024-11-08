@@ -86,7 +86,10 @@ body {
   margin-bottom: 2rem;
   height: 5.3rem;
   background-image: linear-gradient(180deg, #d5c346 0, #dcba3c 8.33%, #e2b033 16.67%, #e8a52b 25%, #ed9824 33.33%, #f08b20 41.67%, #f37b1f 50%, #f56a21 58.33%, #f75827 66.67%, #f9442f 75%, #fa2b38 83.33%, #fa0042 91.67%, #f9004e 100%);
-
+  position: fixed;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(1, 1, 1, 0.5);
+ 
 }
 
 .layout__navbar *{
@@ -103,6 +106,8 @@ body {
   display: flex;
   justify-content: space-between;
   padding-left: 1.5rem;
+  
+  
 }
 
 .container-lists__menu-list{
@@ -174,6 +179,8 @@ body {
 .content__title, .aside__title{
   font-size: 3.5rem;
   margin-right: 1rem;
+  text-shadow: 1px 1px 1px rgb(11, 10, 10);
+
 }
 
 .content__button{
@@ -804,7 +811,6 @@ border-radius: 10px;
 
 .rescatados {
 text-align: center;
-border: #0c8e0c solid;
 width: 100%;
 }
 
@@ -815,7 +821,6 @@ width: 100%;
 	height: auto; 
 	min-height:100%;
 	background: url(../images/bg-main.jpg) 0 0 repeat;
-  /*border: #d90f0f solid*/
 
 	}
 
@@ -834,7 +839,6 @@ width: 100%;
     margin-right: auto;
     width: 80%;
     height: auto;
-    /*border: hsl(136, 84%, 48%) solid*/
 
 }
 
@@ -842,12 +846,8 @@ width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  /*margin-left: auto;
-  margin-right: auto;*/
   width: 50%;
   height:fit-content;
-  
-  /*border: hsl(136, 84%, 48%) solid;*/
   padding: 20px 20px;
 
 }
@@ -881,3 +881,17 @@ width: 100%;
   padding: 20px  20px;
   margin: 20 20 20 20;
 }
+
+#buttonsmenuanimals {
+ display: flex;
+ align-items: center;
+ justify-content: end;
+
+ }
+
+ #buttonanimals {
+  box-shadow: 0 0 10px #000;
+  border-radius: 15px 50px ;
+  background-color: #f75827;
+  
+ }

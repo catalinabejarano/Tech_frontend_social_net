@@ -1,17 +1,37 @@
-import { useState , useEffect } from "react";
+import { useState , useEffect, useRef } from "react";
 import { useForm }  from "../../hooks/useForm";
 import { Global } from '../../helpers/Global';
 import Swal from 'sweetalert2';
 import imagen_top from "../../assets/images/page-img-4.jpg"
 import useAuth from "../../hooks/useAuth";
-//import { useNavigate } from "react-router-dom";
+
 
 export const AnimalsRegisterUpload = () => {
 
-  const { auth } = useAuth();
+  //Estado inicial del formulario
+
+  const initialFormState = {
+    name: '',
+    owner_name: ' ',
+    species: ' ',
+    gender: ' ',
+    image_url: null,
+    age:' ',
+    diet:' ',
+    habits: '',
+    diseases:' ',
+    trained: false, 
+    adopted: false,
+       
+     };
+ 
+    // Ref para el campo de archivo
+   const fileInputRef = useRef(null);
+  
+   const { auth } = useAuth();
   
   // Usar el hook personalizado useFormAnimal para cargar los datos del formulario
-  const { form, changed } = useForm({});
+  const { form, changed , resetForm} = useForm(initialFormState);
 
   // Estado para mostrar el resultado del registro del animal rescatado en la BD
   const [ saved, setSaved ] = useState("not sended");
@@ -39,7 +59,7 @@ export const AnimalsRegisterUpload = () => {
 
     // Obtener los datos del formulario
     let newAnimal = form;
-    newAnimal.user = auth._id;   //validar este dato   ******************//////******************** */ 
+    newAnimal.user = auth._id;  
 
     // Petición a la API (Backend) para guardar el registro del animal rescatado en la BD
     const request = await fetch(Global.url + 'animal/register', {
@@ -91,12 +111,15 @@ export const AnimalsRegisterUpload = () => {
           });
 
           }
+          
         }
 
-        //  Resetear el formulario
-        const myForm = document.querySelector("#animal-form");
-        myForm.reset();
-     
+        //Reseteo de los datos del Formulario
+        resetForm(initialFormState);
+        if (fileInputRef.current) {
+          fileInputRef.current.value = ''; // Limpiar el campo file
+        }
+
     } else {
       setSaved("error");
 
@@ -109,14 +132,10 @@ export const AnimalsRegisterUpload = () => {
     };
   };
 
-  /*
-   
-*/
-
   return (
     <>
       <header className="content__header content__header--public">
-        <h1 className="content__title">Registro Animales Rescatados</h1>
+        <h1 className="content__title">Registro</h1>
       </header>
 
       {/* Formulario de Registro*/}
@@ -230,38 +249,40 @@ export const AnimalsRegisterUpload = () => {
 
               </select>  
               </div>
-         <div>
-         <div>
-                  <label htmlFor="trained">Doméstico</label>
-                  <input
-                  type="checkbox"
-                  id="trained"
-                  name="trained"
-                  onChange={changed}
-                  checked={form.trained || ''}
-                  autoComplete="domesticado"
-                  />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="adopted">Adopción</label>
-                  <input
-                  type="checkbox"
-                  id="adopted"
-                  name="adopted"
-                  onChange={changed}
-                  checked={form.adopted|| ''}
-                  autoComplete="adopción-animal"
-                  />
-                </div>
-        </div>
+         
             </div>   
             </div>
-             {/* upload ***************************************************/}      
-            <div  className="sectiontwo_form">
+               
+              <div className="sectiontwo_form">
+                  <div>
+                    <label htmlFor="trained">Doméstico</label>
+                    <input
+                    type="checkbox"
+                    id="trained"
+                    name="trained"
+                    onChange={changed}
+                    checked={form.trained || ''}
+                    autoComplete="domesticado"
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="adopted">Adopción</label>
+                    <input
+                    type="checkbox"
+                    id="adopted"
+                    name="adopted"
+                    onChange={changed}
+                    checked={form.adopted|| ''}
+                    autoComplete="adopción-animal"
+                    />
+                  </div>
+              </div> 
+              <div  className="sectiontwo_form">
                 <div className="form-group">
                   <label htmlFor="image_url">Subir imagen</label>
                   <input
                   type="file"
+                  ref={fileInputRef}
                   id="image_url"
                   name="file0"
                   />
@@ -275,7 +296,7 @@ export const AnimalsRegisterUpload = () => {
                     />
                 </div> 
                 
-          </div>
+              </div>
             <div className="form-group">
               <label htmlFor="diet">Dieta Alimentaria</label>
               <textarea

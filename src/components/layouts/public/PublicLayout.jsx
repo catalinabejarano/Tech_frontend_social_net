@@ -1,8 +1,6 @@
 import { Navigate, Outlet } from "react-router-dom";
 import { HeaderPub } from "./HeaderPub";
 import useAuth from '../../../hooks/useAuth';
-//import { Footer } from "./Footer";
-
 
 export const PublicLayout = () => {
   const { auth } = useAuth();
@@ -24,9 +22,6 @@ export const PublicLayout = () => {
         )}
       </section>
     
-      {/* Datos de Contacto - Public
-      <Footer />
-      */}
       </>
 
   )

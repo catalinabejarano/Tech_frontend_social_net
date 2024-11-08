@@ -1,7 +1,6 @@
 //import PropTypes from 'prop-types'; 
 import  { useState } from 'react';
 import BounceBox from './BounceBox';
-
 import imagen1 from "../../assets/images/logo_fund.png"
 import imagen2 from "../../assets/images/page-img-in.jpg"
 import gaticosImage from '../../assets/images/page-img.jpg';
@@ -33,7 +32,7 @@ const HomePublic = () => {
     return (
         <>
         <main className="main_home">
-          <section id="content">
+          <section id="content" >
             <section id="content">         
                 <div className="container_16">
                    
@@ -42,7 +41,7 @@ const HomePublic = () => {
                         </div>
                        
                         <div className="box2">
-                                <h1 className="bienvenida">Bienvenidos a la Fundación Albergue Sicaru !!!</h1>
+                                <h1 className="content__title">Bienvenidos</h1>
                                 <br/>
                                 <p className="texto">
                                  Este es nuestro espacio virtual dedicado a nuestros queridos peluditos, quienes son nuestro mayor apoyo emocional. 
@@ -109,11 +108,8 @@ const HomePublic = () => {
                             <p className="texto"> Nosotros trabajamos día a día para brindar un hogar seguro y lleno de amor a nuestros perritos y gatitos rescatados,
                                 pero tu apoyo es esencial para que podamos continuar. Con cada donación, ya sea en forma de alimento, medicamentos,
                                  mantas o contribuciones económicas, ayudas a que estos peluditos reciban el cuidado y atención que tanto necesitan.</p>
-                            <p className="texto">Al unirte a nuestra causa, ofreces una oportunidad de vida digna a cada uno.
-                                
-                            </p> 
-
-                           
+                            <p className="texto">Al unirte a nuestra causa, ofreces una oportunidad de vida digna a cada uno.</p>
+                            
                             </BounceBox>
                              )} 
                                          

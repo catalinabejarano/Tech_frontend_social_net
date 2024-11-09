@@ -37,7 +37,7 @@ const Home = () => {
                         </div>
                        
                         <div className="box2">
-                                <h1 className="content__title"> Fundación Sicaru</h1>
+                                <h1 className="content__title" id="colour__title--home"> Fundación Sicaru</h1>
                                 <br/>
                                 <p className="texto">
                                  Este es nuestro espacio virtual dedicado a nuestros queridos peluditos, quienes son nuestro mayor apoyo emocional. 

@@ -9,6 +9,9 @@ export const RescuedAnimals = () => {
   // Funciones para manejar la selección del componente a mostrar
   const showConsult = () => setActiveComponent("consult");
   const showRegister = () => setActiveComponent("register");
+  const showDogs = () => setActiveComponent("dogsconsult");
+  const showCats = () => setActiveComponent("catsconsult");
+
 
   return (
     <> 
@@ -18,18 +21,31 @@ export const RescuedAnimals = () => {
 
       {/* Botones para alternar entre componentes */}
       <div className="button-group" id="buttonsmenuanimals">
-        <button onClick={showConsult} id="buttonanimals" className={activeComponent === "consult" ? "active" : ""}>
+       <div >
+          <button onClick={showDogs} id="buttonanimals" className={activeComponent === "dogsconsult" ? "active" : ""}>
+            Perros
+          </button>
+          <button onClick={showCats} id="buttonanimals"  className={activeComponent === "catsconsult" ? "active" : ""}>
+            Gatos
+          </button>
+       </div>
+       <div> 
+          <button onClick={showConsult} id="buttonanimals" className={activeComponent === "consult" ? "active" : ""}>
           Consultar
-        </button>
-        <button onClick={showRegister} id="buttonanimals"  className={activeComponent === "register" ? "active" : ""}>
+          </button>
+          <button onClick={showRegister} id="buttonanimals"  className={activeComponent === "register" ? "active" : ""}>
           Registrar
-        </button>
+          </button>
+        </div>
       </div>
 
       {/* Renderizado condicional de componentes */}
       <div className="component-display">
         {activeComponent === "consult" && <ConsultAnimalsApi />}
         {activeComponent === "register" && <AnimalsRegisterUpload />}
+        {activeComponent === "dogsconsult" && <ConsultAnimalsApi filterSpecie="perro" />}
+        {activeComponent === "catsconsult" && <ConsultAnimalsApi filterSpecie="gato" />}
+        
       </div>
     </>
   );

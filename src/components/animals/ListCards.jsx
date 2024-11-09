@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import "../../assets/css/consultapi.css"
 
-const ListCards = ({ imagen, name, habits, age, gender }) => {
+const ListCards = ({ imagen, name, habits, age, gender, }) => {
 
   const [show, setShow] = useState(false);
 
@@ -31,6 +31,7 @@ const ListCards = ({ imagen, name, habits, age, gender }) => {
           <h5 className="card-title">Nombre: {capitalizeEachWord(name)}</h5>
           <h5 className="card-title">Edad: {age} {capitalizeEachWord(años)}</h5>
           <h5 className="card-title">Genero: {capitalizeEachWord(gender)}</h5>
+          
           <div className="grid">
             <button
               className="details btn btn-info"
@@ -47,16 +48,7 @@ const ListCards = ({ imagen, name, habits, age, gender }) => {
               <div style={{ color: "black" }}>{habits}</div>
             ) : (
               <div style={{ color: "blue" }}>
-                <p>
-                 {/*<a
-                    href={ruta ? ruta : "#!"}
-                    target="_blank"
-                    className="btn btn-primary"
-                    rel="noreferrer"
-                  >
-                   
-                    
-                    </a>*/}
+                <p>               
                 </p>
               </div>
             )}
@@ -74,7 +66,8 @@ ListCards.propTypes = {
   habits: PropTypes.array,
   name:PropTypes.string,
   age:PropTypes.number,
-  gender:PropTypes.string
+  gender:PropTypes.string,
+    
 };
 
 

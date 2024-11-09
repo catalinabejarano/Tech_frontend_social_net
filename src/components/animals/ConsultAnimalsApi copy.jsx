@@ -5,7 +5,7 @@ import ListCards from "./ListCards";
 import Loading from '../../assets/images/loading.webp'
 import "../../assets/css/consultapi.css"
 
-const ConsultAnimalsApi = ({filterSpecie}) => {
+const ConsultAnimalsApi = ({filtergender}) => {
   const [page, setPage] = useState(1); // Estado para la página actual
   const { data, loading, error, totalpages } = useFetchData('animal/animals-list/', page); //Array con Datos de los Animales Rescatados 
 
@@ -31,20 +31,23 @@ const ConsultAnimalsApi = ({filterSpecie}) => {
             </div>
   
       <main className="container">  
-       {data
-        .filter((item) => !filterSpecie || item.species === filterSpecie) // Filtra según el género
-        .map((item) => (
+         
+          
+          
+          
+          
+          
+          {data.map((item) => (
           <ListCards
             key={item.id}
             imagen={item.image_url}
             name={item.name}
             habits={item.habits}
-            species={item.species}
             age={parseInt(item.age)}
             gender={item.gender}
-           
           />
-        ))};
+        ))}
+     
       </main>
      
     </>
@@ -53,7 +56,13 @@ const ConsultAnimalsApi = ({filterSpecie}) => {
 
 // Validación de props usando PropTypes
 ConsultAnimalsApi.propTypes = {
-  filterSpecie: PropTypes.string
+  gender: PropTypes.string,  
+};
+
+
+// Validación de props usando PropTypes
+ConsultAnimalsApi.propTypes = {
+  filtergender: PropTypes.string
 }
 
 export default ConsultAnimalsApi;

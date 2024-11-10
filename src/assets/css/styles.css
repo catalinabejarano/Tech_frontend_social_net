@@ -909,3 +909,31 @@ width: 100%;
   width: 80px;
   border-radius: 50px 15px 15px 50px;
  }
+
+ .card-body-sectionone {
+display: flex;
+align-items: center;
+justify-content: space-between;
+
+}
+ 
+.buttonsCards {
+  width:10px;
+
+}
+ 
+.card-buttons{
+  display: flex;
+  flex-direction: column;
+  height: 55px;
+}
+
+.data_cards {
+  display: flex;
+  flex-direction: column;
+  justify-items:left;
+ }
+
+#button_update , #button_delete{
+  background-color: #557a68;
+}

@@ -36,7 +36,7 @@ const ConsultAnimalsApi = ({filterSpecie }) => {
   
       <main className="container">  
        {data
-        .filter((item) => !filterSpecie || item.species === filterSpecie) // Filtra según el género
+        .filter((item) => !filterSpecie || item.species === filterSpecie) // Filtra según la especie
         .map((item) => (
           <ListCards
             key={item.id}
@@ -46,7 +46,7 @@ const ConsultAnimalsApi = ({filterSpecie }) => {
             species={item.species}
             age={parseInt(item.age)}
             gender={item.gender}
-            showButtons={showButtons} // Pasa showButtons a cada tarjeta
+            showButtons={showButtons} 
            
           />
         ))};

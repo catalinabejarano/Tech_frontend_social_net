@@ -24,21 +24,27 @@ const ListCards = ({ imagen, name, habits, age, gender, showButtons}) => {
     <>
       <div className="card text-center" style={{ width: "18rem" }}>
         <div className="overflow2">
-        <img src={imagen} id="adjustimage" className="card-imagen-top" alt={name} title={capitalizeEachWord(name)} />
+          <img src={imagen} id="adjustimage" className="card-imagen-top" alt={name} title={capitalizeEachWord(name)} />
         </div>
         <div className="card-body">
-          <br/>
-          <h5 className="card-title">Nombre: {capitalizeEachWord(name)}</h5>
-          <h5 className="card-title">Edad: {age} {capitalizeEachWord(años)}</h5>
-          <h5 className="card-title">Genero: {capitalizeEachWord(gender)}</h5>
-            {/* Mostrar los botones solo si showButtons es true */}
-      {showButtons && (
-        <div className="card-buttons">
-          <button>Editar</button>
-          <button>Eliminar</button>
-        </div>
-      )}
-          
+          <div className="card-body-sectionone">
+            <div className="data_cards">
+             <br/>
+             <h5 className="card-title">Nombre: {capitalizeEachWord(name)}</h5>
+             <h5 className="card-title">Edad: {age} {capitalizeEachWord(años)}</h5>
+             <h5 className="card-title">Genero: {capitalizeEachWord(gender)}</h5>
+            </div>
+        
+          {/* Visualizar los botones solo si el usuario es Administrador*/}
+            <div>    
+            {showButtons && (
+              <div className="card-buttons">
+              <button className="fa-solid fa-pen-to-square" id="button_update" alt="Actualizar Datos"></button>
+              <button className= "fa-solid fa-trash" id="button_delete" alt="Eliminar"></button>
+              </div>
+            )}
+            </div>
+          </div>
           <div className="grid">
             <button
               className="details btn btn-info"

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import {  useState } from "react";
-import useFetchData from '../../hooks/useFetchData'
-import ListCards from "./ListCards";
+import useFetchData from '../hooks/useFetchData'
+import ListCards from "../components/animals/ListCards";
 import Loading from '../../assets/images/loading.webp'
 import "../../assets/css/consultapi.css"
 

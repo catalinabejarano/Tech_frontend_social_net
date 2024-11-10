@@ -7,38 +7,21 @@ const useFetchData = (endpoint, page ) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [totalpages, setTotalpages] = useState(0);
-  const [checkRole, setCheckRole] = useState("role_user");
 
   useEffect(() => {
     const fetchData = async () => {
       try {
 
-        // Token cargado del usuario
-        const token = localStorage.getItem("token");
-
         setLoading(true);
-        const response = await fetch(`${Global.url}${endpoint}${page}`, {
-            method: 'GET',
-            headers: {
-             "Content-Type": "application/json",
-             "Authorization": token
-            }
-          });
-      
+        const response = await fetch(`${Global.url}${endpoint}${page}`);
 
         if (!response.ok) {
           throw new Error(`Error detectado: ${response.statusText}`);
         }
 
         const result = await response.json();
-
-        //Chequeo role del UserId logueado para habilitar funciones de Eliminación y Actualización de Animales Registrados si es Adminsitrador
-        const checkingRole = result.roleuser;
-        //console.log(checkingRole);
-
         setData(result.animals || []);
         setTotalpages(parseInt(result.pages));
-        setCheckRole(checkingRole);
 
       } catch (err) {
         setError(err.message);
@@ -48,9 +31,9 @@ const useFetchData = (endpoint, page ) => {
     };
 
     fetchData();
-  }, [endpoint, page , totalpages, checkRole]);
+  }, [endpoint, page , totalpages]);
 
-  return { data, loading, error, totalpages, checkRole};
+  return { data, loading, error, totalpages};
   
 };
 

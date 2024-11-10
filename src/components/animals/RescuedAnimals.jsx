@@ -4,7 +4,7 @@ import {AnimalsRegisterUpload} from "./AnimalsRegisterUpload";
 
 export const RescuedAnimals = () => {
   // Estado para controlar el componente activo
-  const [activeComponent, setActiveComponent] = useState("consult"); // 'consult' o 'register'
+  const [activeComponent, setActiveComponent] = useState("consult"); //
 
   // Funciones para manejar la selección del componente a mostrar
   const showConsult = () => setActiveComponent("consult");
@@ -41,6 +41,7 @@ export const RescuedAnimals = () => {
 
       {/* Renderizado condicional de componentes */}
       <div className="component-display">
+        {activeComponent === "delete" && <ConsultAnimalsApi />}
         {activeComponent === "consult" && <ConsultAnimalsApi />}
         {activeComponent === "register" && <AnimalsRegisterUpload />}
         {activeComponent === "dogsconsult" && <ConsultAnimalsApi filterSpecie="perro" />}

@@ -862,8 +862,6 @@ width: 100%;
   margin-right: auto;
   width: 75%;
   height:fit-content;
-  
-  /*border: hsl(240, 84%, 48%) solid;*/
   padding: 20px 20px;
   color:#66afe9
 
@@ -877,7 +875,6 @@ width: 100%;
   text-align: justify;
   width: 50%;
   height: auto;
-  /*border: hwb(35 4% 15%) solid;*/
   padding: 20px  20px;
   margin: 20 20 20 20;
 }
@@ -902,12 +899,17 @@ width: 100%;
 
  .buttons__direction--right {
   width: 80px;
-  border-radius: 15px 50px 50px 15px
+  border-radius: 15px 50px 50px 15px;
+  background-color: #f75827;
+  box-shadow: 0 0 10px #000;
  }
 
  .buttons__direction--left {
   width: 80px;
   border-radius: 50px 15px 15px 50px;
+  background-color: #f75827;
+  box-shadow: 0 0 10px #000;
+
  }
 
  .card-body-sectionone {
@@ -926,6 +928,7 @@ justify-content: space-between;
   display: flex;
   flex-direction: column;
   height: 55px;
+  
 }
 
 .data_cards {
@@ -934,6 +937,49 @@ justify-content: space-between;
   justify-items:left;
  }
 
-#button_update , #button_delete{
-  background-color: #557a68;
+#button_update ,  #button_details {
+  background-color: #dbcd72 ;
+
+}
+
+#button_delete {
+  background-color: #f3787e ;
+}
+
+/*Estilos para el Modal en las Tarjetas de Animales rescatados*/
+.overlay {
+  position:relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: 'center';
+  z-index: 1000;
+  
+}
+
+.modal {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  height: 200px;
+}
+
+.modal_button_yes {
+  background-color:#f3787e ;
+  width: 50px;
+}
+.modal_button_not {
+  width: 50px;
+}
+
+.eliminated_register {
+  text-shadow: 1px 1px 1px hsl(0, 98%, 48%);
+  text-align: center;
 }

@@ -25,10 +25,6 @@ const ConsultAnimalsApi = ({filterSpecie }) => {
 
   return (
     <>  
-      
-
-
-
          <div className="navegacion">
             <button className="buttons__direction--left" onClick={handlePrevPage} disabled={page === 1}>
              Atrás

@@ -1,6 +1,9 @@
-import  { useState } from "react";
+import  { useState , useContext } from "react";
 import ConsultAnimalsApi from "./ConsultAnimalsApi";
 import {AnimalsRegisterUpload} from "./AnimalsRegisterUpload";
+import { RenderContext } from "../../context/RenderContext";
+
+
 
 export const RescuedAnimals = () => {
   // Estado para controlar el componente activo
@@ -12,11 +15,16 @@ export const RescuedAnimals = () => {
   const showDogs = () => setActiveComponent("dogsconsult");
   const showCats = () => setActiveComponent("catsconsult");
 
+  const { childData } = useContext(RenderContext);
+ 
+
+
 
   return (
     <> 
       <header className="rescatados">
         <h1 className="content__title">Animales Rescatados</h1>
+        <p>Datos recibidos del hijo: {childData}</p>
       </header>
 
       {/* Botones para alternar entre componentes */}

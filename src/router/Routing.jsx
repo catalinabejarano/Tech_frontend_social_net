@@ -20,9 +20,13 @@ import  HomePublic  from '../components/home/HomePublic';
 import { RescuedAnimals } from "../components/animals/RescuedAnimals";
 
 
+import { MyProvider } from '../context/MyProvider';
+
+
 export const Routing = () => {
   return (
     <BrowserRouter>
+     <MyProvider>
       <AuthProvider>
          <Routes>
           {/* Cargamos los componentes de la ruta pública */}
@@ -52,6 +56,7 @@ export const Routing = () => {
           
           </Routes>
       </AuthProvider>
+      </MyProvider>
     </BrowserRouter>
   )
 }

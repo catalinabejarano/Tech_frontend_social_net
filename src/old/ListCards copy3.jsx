@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import "../../assets/css/consultapi.css"
 import {useDeleteRegister} from "../../hooks/useDeleteRegister";
-//import { AnimalsRegisterUpload } from "./AnimalsRegisterUpload";
 
 
 
@@ -24,26 +23,6 @@ function Modal({ mostrar, cerrarModal, ejecutarAccion }) {
     </div>
   );
 }
-
-
-// Componente Modal para la actualizacion de registro
-function ModalUpdate({ showUpdate, closeModalUpdate, executeActionUpdate }) {
-  if (!showUpdate) return null; // No renderiza el modal si "showUpdate" es falso
-
-  return (
-    <div className="overlay_update">
-      <div className="modal_update">
-        <h3>Confirmar edición de registro del animal rescatado?</h3>
-        <br/>
-        <div>
-          <button  onClick={executeActionUpdate}>Confimar</button>
-          <button  onClick={closeModalUpdate}>Cancelar</button>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 
 // Función que se ejecutará si la respuesta es "Sí" para eliminar registro de Animal Rescatado
 function ComponenteAccion({valueId}) {
@@ -66,23 +45,9 @@ switch (message) {
   default: 
      text ="Error conexion BD"  + error
   
-} 
- return <div className="eliminated_register">{text}</div>; 
-
 }
-
-
-// Función que se ejecutará si la respuesta es "Sí" para actualizar registro de Animal Rescatado
-function ActionUpdate({valueId}) {
- 
-  return (
-  <>
-  <div >Actualizar Registro</div>;
-  console.log(valueId);
-  </>
-  );
+ return <div className="eliminated_register">{text}</div>;
 }
-
 
 const ListCards = ({ imagen, name, habits, age, gender, showButtons, dataId}) => {
 
@@ -125,11 +90,11 @@ const ListCards = ({ imagen, name, habits, age, gender, showButtons, dataId}) =>
     cerrarModal(); // Cierra el modal después de ejecutar la acción
   };
 
-
+  /*
 
   //Ejecucion del Modal para realizar actualizacion del Registro del Animal  /////
   const [showModalUpdate, setShowModalUpdate] = useState(false);
-  const [executedActionUpdate, setExecutedActionUpdate] = useState(false);  
+  const [executeActionUpdate, setExecuteActionUpdate] = useState(false);  
 
    // Función para abrir el modal
    const openModalUpdate = () => {
@@ -138,26 +103,23 @@ const ListCards = ({ imagen, name, habits, age, gender, showButtons, dataId}) =>
 
   // Función para cerrar el modal
   const closeModalUpdate = () => {
-    setShowModalUpdate(false);
+    setShowModalUpate(false);
   };
 
   // Función que se ejecuta si se selecciona "Sí"
   const executeActionUpdate = () => {
-    setExecutedActionUpdate(true);
+    setExecuteActionUpdate(true);
     closeModalUpdate(); // Cierra el modal después de ejecutar la acción
   };
-
+*/
 
   return (
-    <> 
-
+    <>
       <div className="card text-center" style={{ width: "18rem" }}>
         <div className="overflow2">
-           <img src={imagen} id="adjustimage" className="card-imagen-top" alt={name} title={capitalizeEachWord(name)} />
-            {/* Mostrar el componente de acción solo si se ejecutó */}
-            {accionEjecutada && <ComponenteAccion valueId={dataId} />} 
-            {/* Mostrar el componente de acción solo si se ejecutó */}
-            {executedActionUpdate && <ActionUpdate valueId={dataId} />} 
+          <img src={imagen} id="adjustimage" className="card-imagen-top" alt={name} title={capitalizeEachWord(name)} />
+           {/* Mostrar el componente de acción solo si se ejecutó */}
+           {accionEjecutada && <ComponenteAccion valueId={dataId} />}
         </div>
         <div className="card-body">
           <div className="card-body-sectionone">
@@ -174,12 +136,12 @@ const ListCards = ({ imagen, name, habits, age, gender, showButtons, dataId}) =>
             {showButtons && (
               <div className="card-buttons">
               <button className="fa-solid fa-pen-to-square" 
-               onClick={openModalUpdate}   
+                 
                 id="button_update" 
                 alt="Actualizar Datos">
                </button>
               <button
-                onClick={abrirModal}             
+                onClick={abrirModal}                
                 className= "fa-solid fa-trash" 
                 id="button_delete" 
                 alt="Eliminar">
@@ -188,17 +150,14 @@ const ListCards = ({ imagen, name, habits, age, gender, showButtons, dataId}) =>
              
             )}
             </div>
+           
+
             <Modal 
             mostrar={mostrarModal} 
             cerrarModal={cerrarModal} 
             ejecutarAccion={ejecutarAccion} 
              />
 
-            <ModalUpdate 
-            showUpdate={showModalUpdate} 
-            closeModalUpdate={closeModalUpdate} 
-            executeActionUpdate={executeActionUpdate} 
-             />
           </div>
           <div className="grid">
             <button
@@ -246,19 +205,7 @@ Modal.propTypes = {
   
 };
 
-ModalUpdate.propTypes = {
-  showUpdate: PropTypes.bool.isRequired,     
-  closeModalUpdate: PropTypes.func.isRequired, 
-  executeActionUpdate: PropTypes.func.isRequired, 
-
-}
-
 ComponenteAccion.propTypes = {
-  valueId:PropTypes.string
+    valueId:PropTypes.string
 }
-
-ActionUpdate.propTypes = {
-  valueId:PropTypes.string
-}
-
 export default ListCards;

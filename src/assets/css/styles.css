@@ -947,7 +947,7 @@ justify-content: space-between;
 }
 
 /*Estilos para el Modal en las Tarjetas de Animales rescatados*/
-.overlay {
+.overlay , .overlay_update {
   position:relative;
   top: 0;
   left: 0;
@@ -971,6 +971,16 @@ justify-content: space-between;
   height: 200px;
 }
 
+.modal_update {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  height: 170px;
+}
+
 .modal_button_yes {
   background-color:#f3787e ;
   width: 50px;
@@ -982,4 +992,21 @@ justify-content: space-between;
 .eliminated_register {
   text-shadow: 1px 1px 1px hsl(0, 98%, 48%);
   text-align: center;
+}
+
+
+.testupdatecol {
+  position: absolute;
+  top: 5; /* Ajusta para posicionar la sección en el lugar adecuado */
+  left: 0;
+  width: 67vw; /* Ancho completo de la ventana */
+  height:100%;
+  background-color: #fbfcfc; /* Cambia el color de fondo según tu preferencia */
+  z-index: 1000; /* Asegúrate de que esté encima del layout si es necesario */
+  padding: 2rem;
+  padding-top: 0%;
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items:center
 }

@@ -906,6 +906,7 @@ width: 100%;
 
 }
 
+
 #register__public {
   background: url("../images/background_form.jpg");
   opacity: 0.9;
@@ -919,7 +920,6 @@ width: 100%;
   position: absolute;
   width: 100%;
 }
-
 
 
 #fondo_areas_private {

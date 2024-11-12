@@ -19,12 +19,14 @@ export const NavPriv = () => {
           <span className="menu-list__title">Home</span>
           </NavLink>
         </li>
+        {/*
         <li className="menu-list__item">
           <NavLink to='feed' className="menu-list__link">
             <i className="fa-solid fa-archway"></i>
             <span className="menu-list__title">Begin</span>
           </NavLink>
         </li>
+        */}
 
         <li className="menu-list__item">
           <NavLink to='feed'  className="menu-list__link">

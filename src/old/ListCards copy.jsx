@@ -1,22 +1,21 @@
 //import React from "react";
 import PropTypes from "prop-types";
 import { useState } from "react";
-import "../../assets/css/consultapi.css"
+import "../../assets/css/consultapi.css";
 
-const ListCards = ({ imagen, name, habits, age, gender, showButtons}) => {
-
+const ListCards = ({ imagen, name, habits, age, gender, showButtons }) => {
   const [show, setShow] = useState(false);
 
-  const años = age < 2 ? "año" :  "años" ;
+  const años = age < 2 ? "año" : "años";
 
   //Ajustar la Primera Letra de cada "Prop" a mayuscula antes de Renderizarla
   const capitalize = (word) => {
     return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
   };
-  
+
   const capitalizeEachWord = (text) => {
     const words = text.split(" ");
-    const wordsCapitalized = words.map(word => capitalize(word));
+    const wordsCapitalized = words.map((word) => capitalize(word));
     return wordsCapitalized.join(" ");
   };
 
@@ -24,21 +23,29 @@ const ListCards = ({ imagen, name, habits, age, gender, showButtons}) => {
     <>
       <div className="card text-center" style={{ width: "18rem" }}>
         <div className="overflow2">
-        <img src={imagen} id="adjustimage" className="card-imagen-top" alt={name} title={capitalizeEachWord(name)} />
+          <img
+            src={imagen}
+            id="adjustimage"
+            className="card-imagen-top"
+            alt={name}
+            title={capitalizeEachWord(name)}
+          />
         </div>
         <div className="card-body">
-          <br/>
+          <br />
           <h5 className="card-title">Nombre: {capitalizeEachWord(name)}</h5>
-          <h5 className="card-title">Edad: {age} {capitalizeEachWord(años)}</h5>
+          <h5 className="card-title">
+            Edad: {age} {capitalizeEachWord(años)}
+          </h5>
           <h5 className="card-title">Genero: {capitalizeEachWord(gender)}</h5>
-            {/* Mostrar los botones solo si showButtons es true */}
-      {showButtons && (
-        <div className="card-buttons">
-          <button>Editar</button>
-          <button>Eliminar</button>
-        </div>
-      )}
-          
+          {/* Mostrar los botones solo si showButtons es true */}
+          {showButtons && (
+            <div className="card-buttons">
+              <button>Editar</button>
+              <button>Eliminar</button>
+            </div>
+          )}
+
           <div className="grid">
             <button
               className="details btn btn-info"
@@ -55,12 +62,10 @@ const ListCards = ({ imagen, name, habits, age, gender, showButtons}) => {
               <div style={{ color: "black" }}>{habits}</div>
             ) : (
               <div style={{ color: "blue" }}>
-                <p>               
-                </p>
+                <p></p>
               </div>
             )}
           </div>
-         
         </div>
       </div>
     </>
@@ -68,15 +73,12 @@ const ListCards = ({ imagen, name, habits, age, gender, showButtons}) => {
 };
 
 ListCards.propTypes = {
- 
   imagen: PropTypes.string,
   habits: PropTypes.array,
-  name:PropTypes.string,
-  age:PropTypes.number,
-  gender:PropTypes.string,
-  showButtons: PropTypes.bool
-    
+  name: PropTypes.string,
+  age: PropTypes.number,
+  gender: PropTypes.string,
+  showButtons: PropTypes.bool,
 };
-
 
 export default ListCards;

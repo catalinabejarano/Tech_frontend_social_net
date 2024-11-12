@@ -74,7 +74,7 @@ const Home = () => {
                             <div className="panel2 ">
                                 {showPerritosPanel && (
                                 <BounceBox toggle={setShowPanel}>
-                                    <p className="texto">En nuestra fundación tenemos cerca de 200 perritos amorosos.Además de ofrecer cuidado a los perritos, 
+                                    <p className="texto">En nuestra fundación tenemos cerca de 200 perritos amorosos. Además de ofrecer cuidado a los perritos, 
                                      nuestra misión incluye fomentar una cultura de adopción responsable. </p>
 
                                      <p className="texto">Creemos firmemente que cada uno de estos perritos tiene el potencial de convertirse en un valioso miembro de cualquier hogar, 
@@ -87,7 +87,7 @@ const Home = () => {
                                 {showUbicacionPanel && (
                                 <BounceBox toggle={setShowPanel}>
                                     <p className="texto"> Para llegar a nuestra fundación desde Bogotá, 
-                                    toma la Autopista Norte en dirección hacia el municipio de Chía.  Después de aproximadamente 20 minutos,
+                                    toma la autopista Norte en dirección hacia el municipio de Chía. Después de aproximadamente 20 minutos,
                                     mantente en el carril derecho y sigue las indicaciones hacia la salida de Cajicá. 
                                     </p>
 
@@ -162,7 +162,7 @@ const Home = () => {
 
                                  <div className="grid_4">
                                     <h3>Donde estamos ubicados</h3>
-                                    <b>FUNDACION ALBERGUE SICARU -CUNDINAMARCA</b>
+                                    <b>MUNICIPIO MOSQUERA -CUNDINAMARCA</b>
                                  </div>
            
 	    	                     <div className="grid_16">

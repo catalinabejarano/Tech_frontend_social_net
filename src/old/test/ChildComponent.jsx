@@ -1,5 +1,5 @@
 import  { useContext } from 'react';
-import { RenderContext} from '../RenderContext';
+import { RenderContext} from '../../context/RenderContext';
 
 const ChildComponent = () => {
   const { updateParentData } = useContext(RenderContext);

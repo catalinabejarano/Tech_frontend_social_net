@@ -157,7 +157,7 @@ body {
   flex: 1;
   grid-area: content;
   padding: 0 1.5rem;
-  height: 100vh; /* Asegura que el contenedor ocupe toda la altura de la ventana */
+  height: 100vh; 
 }
 
 .content__login{
@@ -612,35 +612,26 @@ button{
   font-weight: bold;
 }
 
-/*/////////////ESTILOS DEL HOME ///////////////////////*/
+/*/////////////ESTILOS DEL Home.jsx ///////////////////////*/
 
 .logofund {
   width: 220px; 
   height:200px;
- 
-
 }
-
 
 .logofundsmall {
-
   width: 55px; 
   height:55px;
-  
 }
 
-
 .imagesSection {
-
   width: 249px; 
   height: 161px;
   box-shadow: 0 0 20px #000;
   border-radius: 15px 50px
-  
 }
 
 #image_adopta {
-
   box-shadow: 0 0 20px #000;
   border-radius: 15px ;
 } 
@@ -657,7 +648,6 @@ color: hsl(39, 94%, 50%);
 }
 
 .panel {
-
 width: 300px;
 justify-content: center;
 background-color: #4cae4c;
@@ -675,7 +665,6 @@ border-radius: 1px 30px 30px 1px;
 }
 
 .panel3 {
-
 width: 300px;
 justify-content: center;
 background-color: hwb(212 5% 13%);
@@ -684,7 +673,6 @@ border-radius: 1px 30px 30px 1px;
 }
 
 .panel4 {
-
 width: 300px;
 justify-content: center;
 background-color: hwb(30 5% 9%);
@@ -698,10 +686,7 @@ display: flex;
 }
 
 .areasfundacion {
-
-/*border: #337ab7 solid;*/
 padding: 5px 10px;
-
 
 }
 
@@ -723,16 +708,12 @@ border-radius: 15px 50px;
 text-shadow: 1px 1px 2px black;
 }
 
-
-
 .texto {
 font-family: 'Oswald', sans-serif;
 font-size: medium;
-
 }
 
 .bounce-box {
-
 margin-left: 10px;
 margin-top: 0px;
 margin-right: 0px;
@@ -839,7 +820,6 @@ width: 100%;
     margin-right: auto;
     width: 80%;
     height: auto;
-
 }
 
 .container_16 .box1{
@@ -851,7 +831,6 @@ width: 100%;
   padding: 20px 20px;
 
 }
-
 
 .container_16 .box2{
 
@@ -894,7 +873,7 @@ width: 100%;
  }
 
  #colour__title--home {
- color: black;
+  color: black;
  } 
 
  .buttons__direction--right {
@@ -913,9 +892,9 @@ width: 100%;
  }
 
  .card-body-sectionone {
-display: flex;
-align-items: center;
-justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
 }
  

@@ -14,10 +14,6 @@ export const AnimalsRegisterUpdate = ({ cardId }) => {
 
   const { dataId, message} = useFetchDataId('animal/rescued-animal/', cardId);
   
-  console.log("Texto del Mensaje  " + message);
-  console.log("Texto del dataId " + dataId);
-
-
   // Estado inicial del formulario
   const initialFormState = {
     name: '',
@@ -36,10 +32,8 @@ export const AnimalsRegisterUpdate = ({ cardId }) => {
   // Estado del formulario y función para actualizar
   const { form, changed, setForm, handleArrayChange, resetForm } = useFormAnimal(initialFormState);
 
-///////ojojoojjojojo////
   // Ref para el campo de archivo
   const fileInputRef = useRef(null);
-  //const { auth } = useAuth();
 
   // Actualizar initialFormState cuando dataId esté disponible
   useEffect(() => {
@@ -78,13 +72,13 @@ export const AnimalsRegisterUpdate = ({ cardId }) => {
    }, [stored]); // Este efecto solo se ejecuta cuando "stored" cambia
 
 
-  // Método para actualizar un Animal Rescatado en la BD
-  const saveAnimal = async (e) => {
+    // Método para actualizar un Animal Rescatado en la BD
+    const saveAnimal = async (e) => {
 
      // Prevenir que se actualice la pantalla
     e.preventDefault();
     const token = localStorage.getItem("token");
-    console.log("Verificacion dato de la CardId " + cardId);
+    
 
     // Actualizar imagen del Animal Registrado
       const fileInput = document.querySelector("#image_url");
@@ -101,7 +95,7 @@ export const AnimalsRegisterUpdate = ({ cardId }) => {
         });
 
         const uploadData = await uploadRequest.json();
-        console.log("URL DEL ARCHIVO SUBIDO   " +  uploadData.file);
+       
         if (uploadData.status !== "success") {
           setStored("error");
           // Mostrar el modal de error
@@ -118,8 +112,6 @@ export const AnimalsRegisterUpdate = ({ cardId }) => {
 
       // Borrar file0 porque no lo vamos a actualizar por acá
       delete newDataAnimal.file0;
-
-      console.log("Impresion del objeto newAnimal " + newDataAnimal);
 
      // Petición a la API (Backend) para actualizar el registro del animal rescatado en la BD
       const request = await fetch(Global.url + 'animal/update-register/' + cardId, {
@@ -142,7 +134,6 @@ export const AnimalsRegisterUpdate = ({ cardId }) => {
         confirmButtonText: 'Continuar',
       });
       
-
 
        //Reseteo de los datos del Formulario
        resetForm(initialFormState);
@@ -342,7 +333,7 @@ export const AnimalsRegisterUpdate = ({ cardId }) => {
               />
               ))}
             </div>
-*/}
+            */}
              {/* 
             <div className="form-group">
               <label htmlFor="diet">Dieta Alimentaria</label>
@@ -355,28 +346,6 @@ export const AnimalsRegisterUpdate = ({ cardId }) => {
                 autoComplete="dieta-nutricional"
               />
             </div>
-            <div className="form-group">
-              <label htmlFor="habits">Habitos</label>
-              <textarea
-                id="habits"
-                name="habits"
-                maxLength="60"
-                onChange={changed}
-                value={form.habits || ''}
-                autoComplete="habitos-animal"
-              />
-            </div>  
-            <div className="form-group">
-              <label htmlFor="diseases">Enfermedades</label>
-              <textarea
-                id="diseases"
-                name="diseases"
-                maxLength="60"
-                onChange={changed}
-                value={form.diseases|| ''}
-                autoComplete="enfermedades-animal"
-              />
-             </div> 
               */} 
           </form>
         </div>

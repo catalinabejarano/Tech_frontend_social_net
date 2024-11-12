@@ -222,7 +222,7 @@ export const AnimalsRegisterUpdate = ({ cardId }) => {
               <div className="inputs_form">
                 <div>
                 {/*<img src={imagen_top} alt="" className="imagen_top" />*/}
-                <img src={form.image_url} alt="Animal Rescatado" style={{ width: '70px', height: '70px' }} />
+                <img src={form.image_url} alt="Animal Rescatado" id="image__rescued--update"  />
                 </div>
                 <div className="form-group">
                   <label htmlFor="gender">Género</label>

@@ -858,6 +858,85 @@ width: 100%;
   margin: 20 20 20 20;
 }
 
+#fondo_areas{
+  /*position: absolute;*/
+  position: relativa;
+  top: 20; /* Ajusta para posicionar la sección en el lugar adecuado */
+  left: 0;
+  width: 97vw; /* Ancho completo de la ventana */
+  height: auto;
+  background-color: #f0f0f0; /* Cambia el color de fondo según tu preferencia */
+  z-index: 1000; /* Asegúrate de que esté encima del layout si es necesario */
+  padding: 1rem;
+  border-radius: 30px 30pc;
+}
+
+#header_public {
+
+  position: relativa;
+  top: 20; /* Ajusta para posicionar la sección en el lugar adecuado */
+  left: 0;
+  width: 90vw; /* Ancho completo de la ventana */
+  height: auto;
+  z-index: 1000; /* Asegúrate de que esté encima del layout si es necesario */
+  padding: 1rem;
+}
+
+#footer__public {
+
+  position: relativa;
+  top: 20; /* Ajusta para posicionar la sección en el lugar adecuado */
+  left: 0;
+  width: 90vw; /* Ancho completo de la ventana */
+  height: auto;
+  z-index: 1000; /* Asegúrate de que esté encima del layout si es necesario */
+  padding: 1rem;
+
+}
+
+#footer__public--marca , #image__form--public , #login__public , #register__public , #tittle__register{
+  position: relativa;
+  top: 20; /* Ajusta para posicionar la sección en el lugar adecuado */
+  left: 0;
+  width: 90vw; /* Ancho completo de la ventana */
+  height: auto;
+  /*background-color: #f0f0f0; /* Cambia el color de fondo según tu preferencia */
+  z-index: 1000; /* Asegúrate de que esté encima del layout si es necesario */
+  padding: 1rem;
+
+}
+
+#register__public {
+  background: url("../images/background_form.jpg");
+  opacity: 0.9;
+  position: absolute;
+  width: 100%;
+}
+
+#login__public {
+  background: url("../images/background_form.jpg");
+  opacity: 0.9;
+  position: absolute;
+  width: 100%;
+}
+
+
+
+#fondo_areas_private {
+  /*position: absolute;*/
+  position: relative;
+  top: 20; /* Ajusta para posicionar la sección en el lugar adecuado */
+  left: 0;
+  width: 65vw; /* Ancho completo de la ventana */
+  height: auto;
+  background-color: #f0f0f0; /* Cambia el color de fondo según tu preferencia */
+  z-index: 1000; /* Asegúrate de que esté encima del layout si es necesario */
+  padding: 1rem;
+  border-radius: 20px 10pc;
+  background-image: url("../images/fundacion.jpg");
+  box-shadow: 0 0 20px #000;
+}
+
 #buttonsmenuanimals {
  display: flex;
  align-items: center;
@@ -988,4 +1067,12 @@ width: 100%;
   flex-direction: column;
   justify-content: top;
   align-items:center
+}
+
+#image__rescued--update {
+  width: 70px; 
+  height: 70px;
+  box-shadow: 0 0 15px #000;
+  border-radius: 15px 15px
+  
 }

@@ -64,13 +64,11 @@ export const Register = () => {
 
   return (
     <>
-      <header className="content__header content__header--public">
-        <h1 className="content__title">Registro</h1>
-      </header>
+     
 
       {/* Formulario de Registro*/}
-      <div className="content__posts">
-        <div className="form-style">
+      <div className="content__posts"  id="register__public">
+        <div className="form-style" >
 
           {/* Respuesta de usuario registrado */}
           {saved == "saved" ? (
@@ -80,8 +78,12 @@ export const Register = () => {
             <strong className="alert alert-danger">¡El Usuario no se ha registrado correctamente!</strong>
           ) : ''}
 
+          
+           <header className="content__header content__header--public" id="tittle__register" >
+          <h1 className="content__title">Registro</h1>
+          </header>
 
-          <form className="register-form" onSubmit={saveUser}>
+          <form className="register-form"  onSubmit={saveUser}>
             <div className="form-group">
               <label htmlFor="name">Nombres</label>
               <input

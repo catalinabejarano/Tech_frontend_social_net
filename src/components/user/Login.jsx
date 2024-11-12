@@ -66,17 +66,17 @@ export const Login = () => {
 
   return (
     <>
-      <header className="content__header content__header--public">
+    
+      {/* Formulario de Login*/}
+      <div className="content__posts" id="login__public">
+      
+        <div className="form-style">
+        <header className="content__header content__header--public" id="image__form--public">
         <div>
           <img src={logo} className="logo_form" alt="Logo Fundación Sicaru" />
         </div>
         
       </header>
-    
-      {/* Formulario de Login*/}
-      <div className="content__posts">
-      
-        <div className="form-style">
           {/* Mensajes para el usuario */}
           {logged == "logged" ? (
             <strong className="alert alert-success">

@@ -34,7 +34,7 @@ const HomePublic = () => {
         <main className="main_home">
           <section id="content" >
             <section id="content">         
-                <div className="container_16">
+                <div className="container_16" id="header_public">
                    
                         <div className="box1">
                             <img src={imagen1} alt="" className="logofund " />
@@ -148,7 +148,7 @@ const HomePublic = () => {
             </section> 
             <footer>
         <div className="main-footer">
-            <div className="container_16">
+            <div className="container_16" id="footer__public">
                <div className="wrapper bg-wrap-aside">
                    <div className="grid_5 suffix_1">
                        <h3>Encuentranos en nuestras redes sociales</h3>
@@ -160,17 +160,17 @@ const HomePublic = () => {
                    
                    <div className="grid_5">
                         <ul>
-                            <li><a href="./Javascript/ayuda.html">¿Deseas ayudar?</a></li>
-                            <li><a href="./Javascript/contacto.html">Contacto</a></li>
+                            <li><a href="#">¿Deseas ayudar?</a></li>
+                            <li><a href="#">Contacto</a></li>
                         </ul>
                     </div>
                    <div className="grid_4">
                        <h3>Donde estamos ubicados</h3>
-                        <b>FUNDACION ALBERGUE SICARU -CUNDINAMARCA</b>
+                        <b>MOSQUERA -CUNDINAMARCA</b>
                    </div>
                </div>
             </div>
-            <div className ="main-footer">
+            <div className ="main-footer" id="footer__public--marca">
    	            <div className="container_16">
 	    	        <div className="grid_16">
                         <p> Fundación Albergue Sicaru © {new Date().getFullYear()} 

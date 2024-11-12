@@ -1,12 +1,16 @@
 import PropTypes from "prop-types";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useContext } from "react";
 import { useFormAnimal } from "../../hooks/useFormAnimal";
 import { Global } from '../../helpers/Global';
+import { RenderContext } from "../../context/RenderContext";
+import { SerializeForm } from "../../helpers/SerializeForm";
 import useFetchDataId from "../../hooks/useFetchDataId";
 import Swal from 'sweetalert2';
 import avatar from "../../assets/images/default_animal.jpg"
 
 export const AnimalsRegisterUpdate = ({ cardId }) => {
+
+  const { updateRegisterAnimal } = useContext(RenderContext);
 
   const { dataId, message} = useFetchDataId('animal/rescued-animal/', cardId);
   
@@ -20,7 +24,7 @@ export const AnimalsRegisterUpdate = ({ cardId }) => {
     owner_name: '',
     species: '',
     gender: '',
-    image_url: '',
+    image_url: avatar,
     age: '',
     diet: [],
     habits: [],
@@ -45,7 +49,7 @@ export const AnimalsRegisterUpdate = ({ cardId }) => {
         owner_name: dataId.owner_name || '',
         species: dataId.species || '',
         gender: dataId.gender || '',
-        image_url: dataId.image_url || avatar,
+        image_url: dataId.image_url  || avatar,
         age: dataId.age || '',
         diet: dataId.diet || '', // Carga array
         habits: dataId.habits || [], // Carga array
@@ -80,10 +84,7 @@ export const AnimalsRegisterUpdate = ({ cardId }) => {
      // Prevenir que se actualice la pantalla
     e.preventDefault();
     const token = localStorage.getItem("token");
-
-    // Datos del formulario se extraen
-    let newAnimal = form;
-    //newAnimal.user = auth._id;
+    console.log("Verificacion dato de la CardId " + cardId);
 
     // Actualizar imagen del Animal Registrado
       const fileInput = document.querySelector("#image_url");
@@ -100,6 +101,7 @@ export const AnimalsRegisterUpdate = ({ cardId }) => {
         });
 
         const uploadData = await uploadRequest.json();
+        console.log("URL DEL ARCHIVO SUBIDO   " +  uploadData.file);
         if (uploadData.status !== "success") {
           setStored("error");
           // Mostrar el modal de error
@@ -111,11 +113,18 @@ export const AnimalsRegisterUpdate = ({ cardId }) => {
         }
       }
 
-      // Petición a la API (Backend) para actualizar el registro del animal rescatado en la BD
-   
-    const request = await fetch(Global.url + 'animal/update-register/' + cardId, {
+      // Obtener los datos del formulario
+      let newDataAnimal = SerializeForm(e.target);
+
+      // Borrar file0 porque no lo vamos a actualizar por acá
+      delete newDataAnimal.file0;
+
+      console.log("Impresion del objeto newAnimal " + newDataAnimal);
+
+     // Petición a la API (Backend) para actualizar el registro del animal rescatado en la BD
+      const request = await fetch(Global.url + 'animal/update-register/' + cardId, {
       method: 'PUT',
-      body: JSON.stringify(newAnimal),
+      body: JSON.stringify(newDataAnimal),
       headers: {
         "Content-Type": "application/json",
         "Authorization": token
@@ -132,7 +141,7 @@ export const AnimalsRegisterUpdate = ({ cardId }) => {
         icon: 'success',
         confirmButtonText: 'Continuar',
       });
-
+      
 
 
        //Reseteo de los datos del Formulario
@@ -143,6 +152,11 @@ export const AnimalsRegisterUpdate = ({ cardId }) => {
 
     } else {
       setSaved("error");
+
+      //Se reinicia la variable de la Card actualizada
+      updateRegisterAnimal("");
+
+
         // Mostrar el modal de error
       Swal.fire({
         title: data.message || "¡Error en la actualizacion del registro!",
@@ -296,9 +310,9 @@ export const AnimalsRegisterUpdate = ({ cardId }) => {
               <div className="form-group">
               <label htmlFor="habits">Hábitos</label>
                {form.habits.map((habit, index) => (
-              <input
+              <textarea
                key={index}
-               type="text"
+               type="textarea"
                value={habit || ''}
               onChange={(e) => handleArrayChange("habits", index, e.target.value)}
               />
@@ -308,9 +322,9 @@ export const AnimalsRegisterUpdate = ({ cardId }) => {
               <div className="form-group">
               <label htmlFor="diseases">Enfermedades</label>
               {form.diseases.map((disease, index) => (
-              <input
+              <textarea
               key={index}
-              type="text"
+              type="textarea"
               value={disease || ''}
               onChange={(e) => handleArrayChange("diseases", index, e.target.value)}
               />

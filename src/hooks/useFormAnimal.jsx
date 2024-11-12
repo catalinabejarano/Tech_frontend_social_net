@@ -1,17 +1,34 @@
-import { useState } from "react";
+import { useState} from "react";
 
-const useFormAnimal = (initialState = {}) => {
-  const [form, setForm] = useState(initialState);
+export const useFormAnimal = (initialObj = {}) => {
+  const [form, setForm] = useState(initialObj);
 
-  const changed = (e) => {
-    const { name, type, checked, value } = e.target;
-    setForm((prevForm) => ({
+  const changed = ({ target }) => {
+    const { name, value, type, checked } = target;
+
+    setForm(prevForm => ({
       ...prevForm,
-      [name]: type === "checkbox" ? checked : value,
+      [name]: type === "checkbox" ? checked : value
     }));
   };
 
-  return { form, changed, setForm };
-};
+  const handleArrayChange = (name, index, value) => {
+    setForm(prevForm => {
+      const updatedArray = [...prevForm[name]];
+      updatedArray[index] = value;
+      return { ...prevForm, [name]: updatedArray };
+    });
+  };
 
-export default useFormAnimal;
+  const resetForm = () => {
+    setForm(initialObj);
+  };
+
+  return {
+    form,
+    changed,
+    resetForm,
+    setForm,
+    handleArrayChange // Retorna la función para manejar arrays
+  };
+};

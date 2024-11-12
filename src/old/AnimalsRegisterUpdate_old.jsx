@@ -1,18 +1,26 @@
+import PropTypes from "prop-types";
 import { useState , useEffect, useRef } from "react";
-import { useFormAnimal }  from "../../hooks/useFormAnimal";
-import { Global } from '../../helpers/Global';
+import { useForm }  from "../hooks/useForm";
+import { Global } from '../helpers/Global';
+import useFetchDataId from "../hooks/useFetchDataId";
 import Swal from 'sweetalert2';
 import imagen_top from "../../assets/images/page-img-4.jpg"
-import useAuth from "../../hooks/useAuth";
+import useAuth from "../hooks/useAuth";
 
 
-export const AnimalsRegisterUpload = () => {
+export const AnimalsRegisterUpdate = (cardId) => {
 
+  //const valuedId = cardId;
+  //console.log("hola:      " + valuedId.cardId );    //////////////
+  
+  const { dataId, message, error } = useFetchDataId('animal/rescued-animal/', valuedId.cardId );
+  console.log(" dato del registro traido por fetch API" + dataId._Id);
+  
   //Estado inicial del formulario
 
-  const initialFormState = {
+  let initialFormState = {
     name: '',
-    owner_name: ' ',
+    owner_name: '',
     species: ' ',
     gender: ' ',
     image_url: null,
@@ -24,14 +32,16 @@ export const AnimalsRegisterUpload = () => {
     adopted: false,
        
      };
+     
+    
  
-    // Ref para el campo de archivo
+   // Ref para el campo de archivo
    const fileInputRef = useRef(null);
   
    const { auth } = useAuth();
   
-  // Usar el hook personalizado useFormAnimalAnimal para cargar los datos del formulario
-  const { form, changed , resetForm} = useFormAnimal(initialFormState);
+  // Usar el hook personalizado useFormAnimal para cargar los datos del formulario
+  const { form, changed , resetForm} = useForm(initialFormState);
 
   // Estado para mostrar el resultado del registro del animal rescatado en la BD
   const [ saved, setSaved ] = useState("not sended");
@@ -135,7 +145,7 @@ export const AnimalsRegisterUpload = () => {
   return (
     <>
       <header className="content__header content__header--public">
-        <h1 className="content__title">Registro</h1>
+        <h1 className="content__title">Actualizar Registro</h1>
       </header>
 
       {/* Formulario de Registro*/}
@@ -144,10 +154,10 @@ export const AnimalsRegisterUpload = () => {
 
           {/* Respuesta de animal rescatado registrado */}
           {saved == "saved" ? (
-            <strong className="alert alert-success">¡Animal Rescatado  registrado correctamente!</strong>
+            <strong className="alert alert-success">¡Registro de Animal Rescatado  actualizado correctamente!</strong>
           ) : ''}
           {saved == "error" ? (
-            <strong className="alert alert-danger">¡El Animal Rescatado no se ha registrado correctamente!</strong>
+            <strong className="alert alert-danger">¡Error, Registro de Animal Rescatado  no se ha actualizado !</strong>
           ) : ''}
 
 
@@ -291,7 +301,7 @@ export const AnimalsRegisterUpload = () => {
                 <div className="submitbtn">
                     <input
                     type="submit"
-                    value="Regístrar"
+                    value="Actualizar"
                     className="btn btn-success"
                     />
                 </div> 
@@ -337,5 +347,10 @@ export const AnimalsRegisterUpload = () => {
   )
 } 
 
+AnimalsRegisterUpdate.propTypes = {
+
+ cardId: PropTypes.string.isRequired
+
+}
 
 

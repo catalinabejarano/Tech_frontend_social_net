@@ -1,9 +1,8 @@
-import  { useState , useContext } from "react";
+import  { useState , useContext, useEffect } from "react";
 import ConsultAnimalsApi from "./ConsultAnimalsApi";
+import {AnimalsRegisterUpdate} from "./AnimalsRegisterUpdate";
 import {AnimalsRegisterUpload} from "./AnimalsRegisterUpload";
 import { RenderContext } from "../../context/RenderContext";
-
-
 
 export const RescuedAnimals = () => {
   // Estado para controlar el componente activo
@@ -15,16 +14,20 @@ export const RescuedAnimals = () => {
   const showDogs = () => setActiveComponent("dogsconsult");
   const showCats = () => setActiveComponent("catsconsult");
 
+  //Dato que envia el componente ListCards para realizar el Form que edita un registro de animal  
   const { childData } = useContext(RenderContext);
  
-
-
-
+  // Efecto para actualizar el componente activo cuando cambie `childData`
+    useEffect(() => {
+      if (childData !== "") {
+        setActiveComponent("updatereganimal");
+      }
+    }, [childData]); // Se ejecuta cada vez que `childData` cambia
+ 
   return (
     <> 
       <header className="rescatados">
         <h1 className="content__title">Animales Rescatados</h1>
-        <p>Datos recibidos del hijo: {childData}</p>
       </header>
 
       {/* Botones para alternar entre componentes */}
@@ -49,7 +52,7 @@ export const RescuedAnimals = () => {
 
       {/* Renderizado condicional de componentes */}
       <div className="component-display">
-        {activeComponent === "delete" && <ConsultAnimalsApi />}
+        {activeComponent === "updatereganimal" && <AnimalsRegisterUpdate cardId={childData}/>}
         {activeComponent === "consult" && <ConsultAnimalsApi />}
         {activeComponent === "register" && <AnimalsRegisterUpload />}
         {activeComponent === "dogsconsult" && <ConsultAnimalsApi filterSpecie="perro" />}

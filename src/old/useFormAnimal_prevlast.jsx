@@ -11,7 +11,15 @@ export const useFormAnimal = (initialObj = {}) => {
       [name]: type === "checkbox" ? checked : value
     }));
   };
-
+ /*
+  const handleArrayChange = (name, index, value) => {
+    setForm(prevForm => {
+      const updatedArray = [...prevForm[name]];
+      updatedArray[index] = value;
+      return { ...prevForm, [name]: updatedArray };
+    });
+  };
+*/
   const resetForm = () => {
     setForm(initialObj);
   };
@@ -21,5 +29,6 @@ export const useFormAnimal = (initialObj = {}) => {
     changed,
     resetForm,
     setForm,
+    //handleArrayChange // Retorna la función para manejar arrays
   };
 };

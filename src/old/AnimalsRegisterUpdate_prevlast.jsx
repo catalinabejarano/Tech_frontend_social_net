@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
 import { useState, useEffect, useRef, useContext } from "react";
-import { useFormAnimal } from "../../hooks/useFormAnimal";
-import { Global } from '../../helpers/Global';
-import { RenderContext } from "../../context/RenderContext";
-import { SerializeForm } from "../../helpers/SerializeForm";
-import useFetchDataId from "../../hooks/useFetchDataId";
+import { useFormAnimal } from "../hooks/useFormAnimal";
+import { Global } from '../helpers/Global';
+import { RenderContext } from "../context/RenderContext";
+import { SerializeForm } from "../helpers/SerializeForm";
+import useFetchDataId from "../hooks/useFetchDataId";
 import Swal from 'sweetalert2';
 import avatar from "../../assets/images/default_animal.jpg"
 
@@ -30,7 +30,7 @@ export const AnimalsRegisterUpdate = ({ cardId }) => {
   };
 
   // Estado del formulario y función para actualizar
-  const { form, changed, setForm, resetForm } = useFormAnimal(initialFormState);
+  const { form, changed, setForm, handleArrayChange, resetForm } = useFormAnimal(initialFormState);
 
   // Ref para el campo de archivo
   const fileInputRef = useRef(null);
@@ -45,9 +45,9 @@ export const AnimalsRegisterUpdate = ({ cardId }) => {
         gender: dataId.gender || '',
         image_url: dataId.image_url  || avatar,
         age: dataId.age || '',
-        diet: dataId.diet || '', 
-        habits: dataId.habits || '', 
-        diseases: dataId.diseases || '', 
+        diet: dataId.diet || '', // Carga array
+        habits: dataId.habits || [], // Carga array
+        diseases: dataId.diseases || [], // Carga array
         trained: dataId.trained || false,
         adopted: dataId.adopted || false,
       });
@@ -297,7 +297,45 @@ export const AnimalsRegisterUpdate = ({ cardId }) => {
                 </div> 
                 
               </div>
+
               <div className="form-group">
+              <label htmlFor="habits">Hábitos</label>
+               {form.habits.map((habit, index) => (
+              <input
+               key={index}
+               type="text"
+               value={habit || ''}
+              onChange={(e) => handleArrayChange("habits", index, e.target.value)}
+              />
+              ))}
+              </div>
+
+              <div className="form-group">
+              <label htmlFor="diseases">Enfermedades</label>
+              {form.diseases.map((disease, index) => (
+              <input
+              key={index}
+              type="text"
+              value={disease || ''}
+              onChange={(e) => handleArrayChange("diseases", index, e.target.value)}
+              />
+              ))}
+            </div>
+            {/* 
+            <div className="form-group">
+              <label htmlFor="diet">Dieta</label>
+              {form.diet.map((dieta, index) => (
+              <input
+              key={index}
+              type="text"
+              value={dieta || ''}
+              onChange={(e) => handleArrayChange("diet", index, e.target.value)}
+              />
+              ))}
+            </div>
+            /*} 
+             {/* 
+            <div className="form-group">
               <label htmlFor="diet">Dieta Alimentaria</label>
               <textarea
                 id="diet"
@@ -308,28 +346,7 @@ export const AnimalsRegisterUpdate = ({ cardId }) => {
                 autoComplete="dieta-nutricional"
               />
             </div>
-            <div className="form-group">
-              <label htmlFor="habits">Habitos</label>
-              <textarea
-                id="habits"
-                name="habits"
-                maxLength="60"
-                onChange={changed}
-                value={form.habits || ''}
-                autoComplete="habitos-animal"
-              />
-            </div>  
-            <div className="form-group">
-              <label htmlFor="diseases">Enfermedades</label>
-              <textarea
-                id="diseases"
-                name="diseases"
-                maxLength="60"
-                onChange={changed}
-                value={form.diseases|| ''}
-                autoComplete="enfermedades-animal"
-              />
-             </div>  
+              */} 
           </form>
         </div>
       </div>

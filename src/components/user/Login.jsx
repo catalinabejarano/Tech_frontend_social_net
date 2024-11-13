@@ -3,12 +3,11 @@ import { Global } from "../../helpers/Global";
 import { useForm } from "../../hooks/useForm";
 import useAuth from "../../hooks/useAuth";
 import { useNavigate } from "react-router-dom";
-import logo from '../../assets/images/logo_fund.png';
+import logo from "../../assets/images/logo_fund.png";
 
 export const Login = () => {
-
   const navigate = useNavigate();
-  
+
   // Estado para obtener los datos desde el formulario
   const { form, changed, resetForm } = useForm({ email: "", password: "" });
 
@@ -41,7 +40,7 @@ export const Login = () => {
       // Guardar los datos del token y usuario en el localstorage del navegador
       localStorage.setItem("token", data.token);
       // Asegurarse de almacenar el usuario en formato JSON
-      localStorage.setItem("user", JSON.stringify(data.userBD)); 
+      localStorage.setItem("user", JSON.stringify(data.userBD));
 
       // Seteamos la variable de estado logged si se autenticó correctamente el usuario
       setLogged("logged");
@@ -57,7 +56,6 @@ export const Login = () => {
 
       // Forzar una recarga
       window.location.reload();
-
     } else {
       // Seteamos la variable de estado logged si no se autenticó el usuario
       setLogged("error");
@@ -66,17 +64,22 @@ export const Login = () => {
 
   return (
     <>
-    
       {/* Formulario de Login*/}
       <div className="content__posts" id="login__public">
-      
         <div className="form-style">
-        <header className="content__header content__header--public" id="image__form--public">
-        <div>
-          <img src={logo} className="logo_form" alt="Logo Fundación Sicaru" />
-        </div>
-        
-      </header>
+          <header
+            className="content__header content__header--public"
+            id="image__form--public"
+          >
+            <div>
+              <img
+                src={logo}
+                className="logo_form"
+                alt="Logo Fundación Sicaru"
+              />
+            </div>
+          </header>
+          <h1 className="content__title">Login</h1>
           {/* Mensajes para el usuario */}
           {logged == "logged" ? (
             <strong className="alert alert-success">
@@ -92,8 +95,8 @@ export const Login = () => {
           ) : (
             ""
           )}
-          <h1 className="content__title">Login</h1>
-          <br/>
+
+          <br />
           <form className="form-login" onSubmit={loginUser}>
             <div className="form-group">
               <label htmlFor="email">Correo Electrónico</label>

@@ -909,9 +909,14 @@ width: 100%;
 
 #register__public {
   background: url("../images/background_form.jpg");
+  background-repeat :repeat-x;
   opacity: 0.9;
   position: absolute;
   width: 100%;
+  height: 100%;
+  /*top: 120px;  /*oooo*/
+  align-content: center;
+
 }
 
 #login__public {
@@ -919,6 +924,9 @@ width: 100%;
   opacity: 0.9;
   position: absolute;
   width: 100%;
+  height: 100%;
+  align-content: center;
+  /*top: 120px;  /*oooo*/
 }
 
 
